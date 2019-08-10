@@ -1,8 +1,9 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, render_to_response
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Welcome to Fun & Food")
+    return render(request=request, template_name='index.html')
 
 def contact(request):
-    return HttpResponse("This is contact page")
+    phone_no = "0120-1234567"
+    return render(request=request, template_name='contact-us.html', context={'phone_no':phone_no})
