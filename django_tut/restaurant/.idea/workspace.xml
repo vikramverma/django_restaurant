@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a16bad-7e97-463d-a5e9-e35487f834f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/assets/images/site_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpages/templates/contact-us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpages/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpages/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/restaurant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/restaurant.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpages/templates/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpages/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/views.py" afterDir="false" />
     </list>
@@ -108,5 +102,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/urls.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/urls.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

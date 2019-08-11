@@ -7,3 +7,7 @@ def index(request):
 def contact(request):
     phone_no = "0120-1234567"
     return render(request=request, template_name='contact-us.html', context={'phone_no':phone_no})
+
+def menu(request):
+    menu=["sandwitches", "pasta"]
+    return render(request=request, template_name='menu.html', context={'menu_items':menu})
