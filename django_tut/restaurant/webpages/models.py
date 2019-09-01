@@ -7,7 +7,7 @@ class Dish(models.Model):
     rate = models.FloatField()
     isVeg = models.BooleanField(default=True)
     category = models.CharField(max_length=50)
-    image = models.TextField()
+    image = models.TextField(null = True)
     available_from = models.DateTimeField(default=datetime.datetime.now())
     is_available = models.BooleanField()
 

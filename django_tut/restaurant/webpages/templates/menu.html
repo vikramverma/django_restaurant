@@ -1,9 +1,41 @@
 {% extends 'layout.html' %}
 {% block content %}
 Following are available here:<br>
+<table class="table table-responsive" style="background: antiquewhite;">
+    <thead>
+        <th>
+            Dish Name
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            Rate
+        </th>
+        <tbody>
+            {% for item in menu_items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>
+                    {% if not item.image %}
+                    <img width="100px" height="100px" src="/static/images/default_dish.png"/>
+                    {% else %}
+                    <img width="100px" height="100px" src="/static/images/{{ item.image }}"/>
+                    {% endif %}
+                </td>
+                <td>{{ item.rate }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+</table>
+<!--
 <ul>
     {% for item in menu_items %}
-    <li>{{ item }}</li>
+    <li>
+        {{ item.name }} - {{ item.image }} - {{ item.rate }}
+    </li>
     {% endfor %}
 </ul>
+-->
 {% endblock %}
