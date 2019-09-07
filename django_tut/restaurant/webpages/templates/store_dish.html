@@ -10,37 +10,37 @@
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Name: </label>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="name"/>
+                <input type="text" value="{{ dish.name }}" class="form-control" name="name"/>
             </div>
         </div>
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Rate: </label>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="rate"/>
+                <input type="text" class="form-control" value="{{ dish.rate }}" name="rate"/>
             </div>
         </div>
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Category: </label>
             <div class="col-md-7">
-                <input type="text" class="form-control" name="category"/>
+                <input type="text" class="form-control" value="{{ dish.category }}" name="category"/>
             </div>
         </div>
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Available From: </label>
             <div class="col-md-7">
-                <input type="date" class="form-control" name="available_from"/>
+                <input type="date" class="form-control" value="{{ dish.available_from }}" name="available_from"/>
             </div>
         </div>
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Veg: </label>
             <div class="col-md-7">
-                <input type="checkbox" value="yes" class="form-control" name="is_veg"/>
+                <input type="checkbox" value="yes" {% if dish.isVeg %} checked {% endif %} class="form-control" name="is_veg"/>
             </div>
         </div>
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Is Available?: </label>
             <div class="col-md-7">
-                <input type="checkbox" value="yes" class="form-control" name="is_available"/>
+                <input type="checkbox" value="yes" {% if dish.is_available %} checked {% endif %} class="form-control" name="is_available"/>
             </div>
         </div>
         <div class="row col-md-10 form-group">

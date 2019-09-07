@@ -37,7 +37,15 @@
           <a class="dropdown-item" href="/webpages/menu/chinese">Chinese</a>
           <a class="dropdown-item" href="{% url 'website:menu' type='continental' %}">Continental</a>
           <div class="dropdown-divider"></div>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'website:create_dish' %}">Create Dish</a>
+          <a class="dropdown-item" href="{% url 'website:list_dish' %}">Manage Dishes</a>
         </div>
       </li>
       <li class="nav-item">

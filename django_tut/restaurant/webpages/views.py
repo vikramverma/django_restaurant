@@ -55,6 +55,9 @@ def menu(request, type):
         menu = []
     return render(request=request, template_name='menu.html', context={'menu_items': menu})
 
+def list_dish(request):
+    dishes = Dish.objects.all()
+    return render_to_response(template_name='admin_menu_list.html', context={'dishes':dishes})
 
 def create_dish(request):
     # my_dish = Dish(name="pani puri", image="pani_puri.jpeg")
@@ -87,3 +90,44 @@ def store_dish(request):
         dish.save()
         status = 'Dish Added!'
     return render(request=request, template_name='store_dish.html', context={'status':status})
+
+def edit_dish(request, id):
+    status = ''
+    try:
+        dish = Dish.objects.get(id=id)
+    except:
+        return HttpResponse("Dish not found!")
+    if request.POST:
+        name = request.POST['name']
+        category = request.POST['category']
+        rate = request.POST['rate']
+        rate = float(rate)
+        available_from = request.POST['available_from']
+        available_from = datetime.datetime.strptime(available_from, '%Y-%m-%d').date()
+        is_veg = True if 'is_veg' in request.POST else False
+        is_available = True if 'is_available' in request.POST else False
+        if request.FILES:
+            file = request.FILES['file']
+            dest_file = settings.BASE_DIR + '/static/images/'+file.name
+            with open(dest_file,'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+        dish.name = name
+        dish.category = category
+        dish.rate = rate
+        dish.available_from = available_from
+        dish.isVeg = is_veg
+        dish.is_available = is_available
+        if request.FILES:
+            dish.image = file.name
+        dish.save()
+        status = 'Dish Saved!'
+    return render(request=request, template_name='store_dish.html', context={'dish': dish, 'status':status})
+
+def delete_dish(request, id):
+    try:
+        dish = Dish.objects.get(id=id)
+    except:
+        return HttpResponse("Dish not found!")
+    dish.delete()
+    return HttpResponse("Dish removed!")

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a16bad-7e97-463d-a5e9-e35487f834f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/webpages/templates/store_dish.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpages/templates/admin_menu_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpages/templates/store_dish.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/store_dish.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/views.py" afterDir="false" />
     </list>
@@ -31,18 +31,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/webpages/templates" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/static/assets/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/webpages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webpages/templates" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/static/assets/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -111,17 +112,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>78</line>
+          <line>81</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>79</line>
+          <line>82</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>77</line>
+          <line>80</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
