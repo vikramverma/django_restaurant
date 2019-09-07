@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a16bad-7e97-463d-a5e9-e35487f834f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/webpages/templates/store_dish.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpages/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/views.py" afterDir="false" />
     </list>
@@ -111,9 +110,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/urls.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>77</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

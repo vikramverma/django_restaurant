@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, render_to_response
 from webpages.models import Dish
+from django.conf import settings
 import datetime
 
 # Create your views here.
@@ -65,5 +66,24 @@ def create_dish(request):
     # my_dish.save()
     return HttpResponse("dish created here")
 
-# def dish_page(request, id):
-#     return HttpResponse(id)
+
+def store_dish(request):
+    status  = 'Create a dish here'
+    if request.POST:
+        name = request.POST['name']
+        category = request.POST['category']
+        rate = request.POST['rate']
+        rate = float(rate)
+        available_from = request.POST['available_from']
+        available_from = datetime.datetime.strptime(available_from, '%Y-%m-%d').date()
+        is_veg = True if 'is_veg' in request.POST else False
+        is_available = True if 'is_available' in request.POST else False
+        file = request.FILES['file']
+        dest_file = settings.BASE_DIR + '/static/images/'+file.name
+        with open(dest_file,'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+        dish = Dish(name=name, category = category, rate = rate, available_from = available_from, isVeg = is_veg, is_available = is_available, image = file.name)
+        dish.save()
+        status = 'Dish Added!'
+    return render(request=request, template_name='store_dish.html', context={'status':status})
