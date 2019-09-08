@@ -11,6 +11,9 @@ class Dish(models.Model):
     available_from = models.DateTimeField(default=datetime.datetime.now())
     is_available = models.BooleanField()
 
+class admin_user(models.Model):
+    username = models.CharField(max_length=250)
+    password = models.TextField()
 
 class Discount(models.Model):
     discount_value = models.FloatField()

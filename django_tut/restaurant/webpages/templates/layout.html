@@ -39,6 +39,16 @@
           <div class="dropdown-divider"></div>
         </div>
       </li>
+      {% if admin_menu %}
+      <li class="nav-item">
+        <a class="nav-link  " href="{% url 'website:logout' %}" tabindex="-1" >Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link  " href="{% url 'website:login' %}" tabindex="-1" >Login</a>
+      </li>
+      {% endif %}
+      {% if admin_menu %}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Admin Menu
@@ -48,6 +58,7 @@
           <a class="dropdown-item" href="{% url 'website:list_dish' %}">Manage Dishes</a>
         </div>
       </li>
+      {% endif %}
       <li class="nav-item">
         <a class="nav-link  " href="http://127.0.0.1:8000/webpages/contact-us" tabindex="-1" >Contact-us</a>
       </li>

@@ -79,7 +79,11 @@ WSGI_APPLICATION = 'restaurant.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),#database_name
+        # 'host':'localhost',
+        # 'port' : '3306',
+        # 'user' : 'db_user',
+        # 'password' : 'db_password'
     }
 }
 
@@ -116,6 +120,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+#email smtp connection info
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'name@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'
+#email smtp connection info
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

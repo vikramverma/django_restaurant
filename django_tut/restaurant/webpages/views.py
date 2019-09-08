@@ -1,15 +1,26 @@
-from django.shortcuts import render, HttpResponse, render_to_response
-from webpages.models import Dish
+from django.shortcuts import render, HttpResponse, render_to_response, redirect
+from webpages.models import Dish, admin_user
 from django.conf import settings
+from django.core.mail import send_mail
 import datetime
 
 # Create your views here.
 def index(request):
-    return render(request=request, template_name='index.html')
+    is_admin = check_admin(request)
+    return render(request=request, template_name='index.html', context={'admin_menu':is_admin})
 
 def contact(request):
     phone_no = "0120-1234567"
-    return render(request=request, template_name='contact-us.html', context={'phone_no':phone_no})
+    is_admin = check_admin(request)
+    if request.POST:
+        name = request.POST['name']
+        mobile = request.POST['mobile']
+        email = request.POST['email']
+        message = request.POST['message']
+        message_subject = "Message from our site"
+        message_body = "Name: " + name + " Mobile:" + mobile + " EMail:" + email + " Message:" + message
+        send_mail(from_email='from_email', recipient_list=['admin@company_mail.com'], subject=message_subject, message = message_body)
+    return render(request=request, template_name='contact-us.html', context={'phone_no':phone_no, 'admin_menu':is_admin})
 
 # def continental(request):
 #     menu=["sandwitches", "pasta", "burgers"]
@@ -53,11 +64,13 @@ def menu(request, type):
         menu = Dish.objects.filter(category="chinese")
     else:
         menu = []
+    is_admin = check_admin(request)
     return render(request=request, template_name='menu.html', context={'menu_items': menu})
 
 def list_dish(request):
     dishes = Dish.objects.all()
-    return render_to_response(template_name='admin_menu_list.html', context={'dishes':dishes})
+    is_admin = check_admin(request)
+    return render_to_response(template_name='admin_menu_list.html', context={'dishes':dishes, 'admin_menu':is_admin})
 
 def create_dish(request):
     # my_dish = Dish(name="pani puri", image="pani_puri.jpeg")
@@ -71,6 +84,7 @@ def create_dish(request):
 
 
 def store_dish(request):
+    is_admin = check_admin(request)
     status  = 'Create a dish here'
     if request.POST:
         name = request.POST['name']
@@ -89,9 +103,10 @@ def store_dish(request):
         dish = Dish(name=name, category = category, rate = rate, available_from = available_from, isVeg = is_veg, is_available = is_available, image = file.name)
         dish.save()
         status = 'Dish Added!'
-    return render(request=request, template_name='store_dish.html', context={'status':status})
+    return render(request=request, template_name='store_dish.html', context={'status':status, 'admin_menu':is_admin})
 
 def edit_dish(request, id):
+    is_admin = check_admin(request)
     status = ''
     try:
         dish = Dish.objects.get(id=id)
@@ -122,7 +137,7 @@ def edit_dish(request, id):
             dish.image = file.name
         dish.save()
         status = 'Dish Saved!'
-    return render(request=request, template_name='store_dish.html', context={'dish': dish, 'status':status})
+    return render(request=request, template_name='store_dish.html', context={'dish': dish, 'status':status, 'admin_menu':is_admin})
 
 def delete_dish(request, id):
     try:
@@ -131,3 +146,45 @@ def delete_dish(request, id):
         return HttpResponse("Dish not found!")
     dish.delete()
     return HttpResponse("Dish removed!")
+
+
+def login(request):
+    if request.POST:
+        username = request.POST['username']
+        password = request.POST['password']
+        my_admin_user = admin_user.objects.filter(username = username)
+        if my_admin_user.count() > 0:
+            my_admin_user = my_admin_user[0]
+            db_username = my_admin_user.username
+            db_password = my_admin_user.password
+            if username == db_username and password == db_password:
+                response = render(request = request, template_name='login.html', context={'status':'Login Successful!'})
+                #notice response usage for cookies
+                # response.set_cookie('login_id', '45565$78678#')
+                # notice request usage for session
+                request.session['login_id'] = '45565$78678#'
+            else:
+                response = render(request=request, template_name='login.html',
+                                  context={'status': 'Login Unsuccessful!'})
+        else:
+            response = render(request = request, template_name='login.html', context={'status': 'Login Unsuccessful!'})
+            # return redirect('/home')
+        return redirect('/webpages/home')
+    else:
+        return render(request = request, template_name='login.html', context={'status':'', 'admin_menu':False})
+
+def logout(request):
+    # del request.COOKIES['login_id']
+    request.session['login_id'] = None
+    return redirect('/webpages/login')
+
+def check_admin(request):
+    try:
+        # login_id = request.COOKIES['login_id']
+        login_id = request.session['login_id']
+        if login_id == '45565$78678#':
+            return True
+        else:
+            return False
+    except Exception as e:
+        return False

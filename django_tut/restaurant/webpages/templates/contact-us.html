@@ -1,7 +1,45 @@
 {% extends 'layout.html' %}
 {% block content %}
-<h1>This is contact page</h1>
-<h1>Please give us a call at {{ phone_no }}</h1>
+<h1>Please send us a mail by following form:</h1>
+<form class="form" method="post">
+    {% csrf_token %}
+    <div class="panel">
+        <div class="row col-md-10 form-group">
+        </div>
+        <div class="row col-md-10 form-group">
+            <label class="col-md-3"> Name: </label>
+            <div class="col-md-7">
+                <input type="text" class="form-control" name="name"/>
+            </div>
+        </div>
+        <div class="row col-md-10 form-group">
+            <label class="col-md-3"> Email: </label>
+            <div class="col-md-7">
+                <input type="text" class="form-control" name="email"/>
+            </div>
+        </div>
+        <div class="row col-md-10 form-group">
+            <label class="col-md-3"> Mobile: </label>
+            <div class="col-md-7">
+                <input type="text" class="form-control" name="mobile"/>
+            </div>
+        </div>
+        <div class="row col-md-10 form-group">
+            <label class="col-md-3"> Message: </label>
+            <div class="col-md-7">
+                <textarea class="form-control" name="message"></textarea>
+            </div>
+        </div>
+        <div class="row col-md-10 form-group">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-7">
+                <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+        </div>
+    </div>
+</form>
+<h1>You can also give us a call at {{ phone_no }}</h1>
 {% endblock %}
 
 

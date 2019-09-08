@@ -28,11 +28,12 @@
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Available From: </label>
             <div class="col-md-7">
-                <input type="date" class="form-control" value="{{ dish.available_from }}" name="available_from"/>
+                <input type="date" class="form-control" value="{{ dish.available_from|date:'Y-m-d' }}" name="available_from"/>
             </div>
         </div>
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Veg: </label>
+            <div class="col-md-7">
             <div class="col-md-7">
                 <input type="checkbox" value="yes" {% if dish.isVeg %} checked {% endif %} class="form-control" name="is_veg"/>
             </div>
