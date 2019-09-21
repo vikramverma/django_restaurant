@@ -100,6 +100,7 @@ def menu(request, type):
         #     order.append(this_dish.name)
         order = ", ".join(order)
         mobile = request.POST['mobile']
+
         Order(mobile = mobile, order = order).save()
 
     return render(request=request, template_name='menu.html', context={'menu_items': menu, 'admin_menu':is_admin})
@@ -225,3 +226,38 @@ def check_admin(request):
             return False
     except Exception as e:
         return False
+
+
+
+# Database interactions
+# saving object
+# this_order = Order()
+# this_order.mobile = mobile
+# this_order.order = order
+# this_order.save()
+#
+# # fetching all objects
+# orders = Order.objects.all()
+#
+# # filter - gives multiple objects
+# orders = Order.objects.filter(mobile='123434')
+# orders = Order.objects.exclude(mobile='123434')
+#
+# # filter with single object
+# order = Order.objects.get(id=1)
+#
+# # updating single object
+# order = Order.objects.get(id=1)
+# order.mobile = '1232132'
+# order.save()
+# Order.objects.get(id=1).update(mobile=1232)
+#
+# # multiple objects update
+# Order.objects.filter(mobile='123434').update(order='ajdflkdlaks')
+# orders = Order.objects.filter(mobile='123434')
+# for item in orders:
+#     item.mobile = 12321
+#     item.save()
+#     # item.delete()
+# Order.objects.filter(mobile='123434').delete()
+# Order.objects.get(id=1).delete()
