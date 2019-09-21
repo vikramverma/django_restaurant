@@ -1,8 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
 Following are available here:<br>
-<form method="post">
-    {% csrf_token %}
 <table class="table table-responsive" style="background: antiquewhite;">
     <thead>
         <th>
@@ -13,12 +11,6 @@ Following are available here:<br>
         </th>
         <th>
             Rate
-        </th>
-        <th>
-            Select
-        </th>
-        <th>
-            Qty
         </th>
         <tbody>
             {% for item in menu_items %}
@@ -32,20 +24,11 @@ Following are available here:<br>
                     {% endif %}
                 </td>
                 <td>{{ item.rate }}</td>
-                <td>
-                    <input type="checkbox" class="form-control" value="{{ item.id }}" name="selection">
-                </td>
-                <td>
-                    <input type="number" min="0" max="10" class="form-control" name="qty">
-                </td>
             </tr>
             {% endfor %}
         </tbody>
     </thead>
 </table>
-   Mobile: <input type="text" name="mobile"/>
-<input type="submit" value="Order"/>
-</form>
 <!--
 <ul>
     {% for item in menu_items %}

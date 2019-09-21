@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9a16bad-7e97-463d-a5e9-e35487f834f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/remaining_topics" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpages/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.ignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.ignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webpages/templates/search_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restaurant/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/restaurant/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpages/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpages/templates/contact-us.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/contact-us.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpages/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/templates/store_dish.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/templates/store_dish.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/webpages/views.py" afterDir="false" />
@@ -41,15 +39,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/webpages/templates" />
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$/static/assets/images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/webpages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webpages/templates" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/static/assets/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -118,143 +116,73 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="32" />
+          <line>57</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="33" />
+          <line>59</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/webpages/views.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
           <line>94</line>
-          <option name="timeStamp" value="34" />
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>184</line>
-          <option name="timeStamp" value="38" />
+          <line>96</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>182</line>
-          <option name="timeStamp" value="39" />
+          <line>95</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>181</line>
-          <option name="timeStamp" value="40" />
+          <line>93</line>
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>187</line>
-          <option name="timeStamp" value="42" />
+          <line>100</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>189</line>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>188</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>185</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>186</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>159</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>160</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>158</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>156</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>155</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>154</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>157</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>162</line>
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>165</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>167</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>166</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>169</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>168</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>171</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/webpages/views.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="65" />
+          <line>102</line>
+          <option name="timeStamp" value="106" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

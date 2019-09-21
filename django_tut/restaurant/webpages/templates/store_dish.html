@@ -22,7 +22,12 @@
         <div class="row col-md-10 form-group">
             <label class="col-md-3"> Category: </label>
             <div class="col-md-7">
-                <input type="text" class="form-control" value="{{ dish.category }}" name="category"/>
+                <select name="category" class="form-control">
+                    {% for item in category %}
+                        <option>{{ item }}</option>
+                    {% endfor %}
+                </select>
+                <!-- <input type="text" class="form-control" value="{{ dish.category }}" name="category"/>-->
             </div>
         </div>
         <div class="row col-md-10 form-group">

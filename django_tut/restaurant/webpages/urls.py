@@ -13,6 +13,7 @@ urlpatterns = [
     path('list_dish', views.list_dish, name='list_dish'),
     path('login', views.login, name='login'),
     path('logout', views.logout, name='logout'),
+    path('search', views.search, name='search'),
     # path('continental', views.continental, name='continental'),
     # path('indian', views.indian, name='indian'),
     # path('dishes/continental', views.menu, name='continental_menu'),

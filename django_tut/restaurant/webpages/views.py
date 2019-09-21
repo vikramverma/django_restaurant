@@ -1,8 +1,8 @@
 from django.shortcuts import render, HttpResponse, render_to_response, redirect
-from webpages.models import Dish, admin_user
+from webpages.models import Dish, admin_user, Dish_category, Order
 from django.conf import settings
 from django.core.mail import send_mail
-import datetime
+import datetime, json
 
 # Create your views here.
 def index(request):
@@ -54,18 +54,55 @@ def contact(request):
 #         menu = []
 #     return render(request=request, template_name='menu.html', context={'menu_items': menu})
 
-def menu(request, type):
-    # type = request.GET['type']
-    if type == "indian":
-        menu = Dish.objects.filter(category="indian", rate__lte = 50)
-    elif type == "continental":
-        menu = Dish.objects.exclude(category="indian")
-    elif type == "chinese":
-        menu = Dish.objects.filter(category="chinese")
+def search(request):
+    search = request.GET.get('search', None)
+    if search is not None:
+        menu = Dish.objects.filter(name__icontains = search)
     else:
         menu = []
+    # is_admin = check_admin(request)
+    # return render(request=request, template_name='menu.html', context={'menu_items': menu, 'admin_menu': is_admin})
+    menu_items = []
+    for item in menu:
+        menu_items.append({
+            'name':item.name,
+            'rate':item.rate,
+            'image':item.image
+        })
+    return HttpResponse(json.dumps(menu_items))
+
+def menu(request, type):
+    search = request.GET.get('search', None)
+    # type = request.GET['type']
+    if search is not None:
+        menu = Dish.objects.filter(name__icontains = search)
+    else:
+        if type == "indian":
+            menu = Dish.objects.filter(category="indian")
+        elif type == "continental":
+            menu = Dish.objects.exclude(category="indian")
+        elif type == "chinese":
+            menu = Dish.objects.filter(category="chinese")
+        else:
+            menu = []
     is_admin = check_admin(request)
-    return render(request=request, template_name='menu.html', context={'menu_items': menu})
+    if request.POST:
+        selections = request.POST.getlist('selection')
+        qtys = request.POST.getlist('qty')
+        order = []
+        count = len(selections)
+        for i in range(0, count):
+            this_dish = Dish.objects.get(id=selections[i])
+            qty = qtys[i]
+            order.append(this_dish.name+" - " +str(qty))
+        # for item in selections:
+        #     this_dish = Dish.objects.get(id = item)
+        #     order.append(this_dish.name)
+        order = ", ".join(order)
+        mobile = request.POST['mobile']
+        Order(mobile = mobile, order = order).save()
+
+    return render(request=request, template_name='menu.html', context={'menu_items': menu, 'admin_menu':is_admin})
 
 def list_dish(request):
     dishes = Dish.objects.all()
@@ -103,7 +140,7 @@ def store_dish(request):
         dish = Dish(name=name, category = category, rate = rate, available_from = available_from, isVeg = is_veg, is_available = is_available, image = file.name)
         dish.save()
         status = 'Dish Added!'
-    return render(request=request, template_name='store_dish.html', context={'status':status, 'admin_menu':is_admin})
+    return render(request=request,template_name='store_dish.html', context={'status':status, 'admin_menu':is_admin, 'category':Dish_category.objects.all()})
 
 def edit_dish(request, id):
     is_admin = check_admin(request)
@@ -137,7 +174,7 @@ def edit_dish(request, id):
             dish.image = file.name
         dish.save()
         status = 'Dish Saved!'
-    return render(request=request, template_name='store_dish.html', context={'dish': dish, 'status':status, 'admin_menu':is_admin})
+    return render(request=request, template_name='store_dish.html', context={'dish': dish, 'status':status, 'admin_menu':is_admin, 'category':Dish_category.objects.all()})
 
 def delete_dish(request, id):
     try:

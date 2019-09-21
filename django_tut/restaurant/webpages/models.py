@@ -11,6 +11,20 @@ class Dish(models.Model):
     available_from = models.DateTimeField(default=datetime.datetime.now())
     is_available = models.BooleanField()
 
+
+class Order(models.Model):
+    order = models.TextField()
+    mobile = models.TextField()
+
+    def __str__(self):
+        return self.order + " - " +self.mobile
+
+class Dish_category(models.Model):
+    category_name = models.TextField()
+
+    def __str__(self):
+        return self.category_name
+
 class admin_user(models.Model):
     username = models.CharField(max_length=250)
     password = models.TextField()
